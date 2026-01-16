@@ -6,12 +6,14 @@ _base_ = [
 ]
 
 # model settings
-norm_cfg = dict(type='SyncBN', requires_grad=True)
+# norm_cfg = dict(type='SyncBN', requires_grad=True)
+norm_cfg = dict(type='GN', num_groups=8, requires_grad=True)
+
 model = dict(
     type='EncoderDecoder',
         backbone=dict(
         type='SegMANEncoder_s',
-        pretrained='/path/to/SegMAN_Encoder_s.pth.tar',
+        pretrained='/home/shiyuan/polyp/SegMAN/segmentation/pretrained/SegMAN_Encoder_s.pth.tar',
         style='pytorch',
         ),
     decode_head=dict(
@@ -43,6 +45,6 @@ lr_config = dict(_delete_=True, policy='poly',
                  warmup_ratio=1e-6,
                  power=1.0, min_lr=0.0, by_epoch=False)
 
-data = dict(samples_per_gpu=2) # total batch size 8
+data = dict(samples_per_gpu=1) # total batch size 8
 evaluation = dict(interval=4000, metric='mIoU',save_best='mIoU')
 

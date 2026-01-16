@@ -1,0 +1,35 @@
+# ======================
+# Editor
+# ======================
+.vscode/
+
+# ======================
+# Python cache & build
+# ======================
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+build/
+dist/
+
+# ======================
+# C++ / CUDA build
+# ======================
+kernels/**/build/
+
+# ======================
+# Datasets (DO NOT COMMIT)
+# ======================
+data/
+datasets/
+segmentation/data/
+
+# ======================
+# Pretrained models & outputs
+# ======================
+pretrained/
+segmentation/pretrained/
+checkpoints/
+logs/
+outputs/

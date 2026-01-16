@@ -29,6 +29,7 @@ def parse_args():
         '--load-from', help='the checkpoint file to load weights from')
     parser.add_argument(
         '--resume-from', help='the checkpoint file to resume from')
+    ###训练时候是否开启验证模式###
     parser.add_argument(
         '--no-validate',
         action='store_true',
@@ -63,10 +64,12 @@ def parse_args():
         '--diff_seed',
         action='store_true',
         help='Whether or not set different seeds for different ranks')
+    ###开启cudnn的确定性操作，便于复现，缺点性能下降###
     parser.add_argument(
         '--deterministic',
         action='store_true',
         help='whether to set deterministic options for CUDNN backend.')
+    ###临时覆盖config参数用法，训练结束后可删除###
     parser.add_argument(
         '--options',
         nargs='+',
@@ -88,6 +91,7 @@ def parse_args():
         'It also allows nested list/tuple values, e.g. key="[(a,b),(c,d)]" '
         'Note that the quotation marks are necessary and that no white space '
         'is allowed.')
+    ###是否启用分布式训练###
     parser.add_argument(
         '--launcher',
         choices=['none', 'pytorch', 'slurm', 'mpi'],
@@ -209,11 +213,11 @@ def main():
     cfg.seed = seed
     meta['seed'] = seed
     meta['exp_name'] = osp.basename(args.config)
-
     model = build_segmentor(
         cfg.model,
         train_cfg=cfg.get('train_cfg'),
         test_cfg=cfg.get('test_cfg'))
+    print(model)
     model.init_weights()
 
     # SyncBN is not support for DP
