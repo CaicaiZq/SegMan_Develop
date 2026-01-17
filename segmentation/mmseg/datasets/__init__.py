@@ -5,6 +5,7 @@ from .chase_db1 import ChaseDB1Dataset
 from .cityscapes import CityscapesDataset
 from .coco_stuff import COCOStuffDataset
 from .custom import CustomDataset
+from .polyp import PolypDataset
 from .dark_zurich import DarkZurichDataset
 from .dataset_wrappers import (ConcatDataset, MultiImageMixDataset,
                                RepeatDataset)
@@ -27,5 +28,5 @@ __all__ = [
     'PascalContextDataset59', 'ChaseDB1Dataset', 'DRIVEDataset', 'HRFDataset',
     'STAREDataset', 'DarkZurichDataset', 'NightDrivingDataset',
     'COCOStuffDataset', 'LoveDADataset', 'MultiImageMixDataset',
-    'iSAIDDataset', 'ISPRSDataset', 'PotsdamDataset', 'FaceOccludedDataset'
+    'iSAIDDataset', 'ISPRSDataset', 'PotsdamDataset', 'FaceOccludedDataset','PolypDataset'
 ]
