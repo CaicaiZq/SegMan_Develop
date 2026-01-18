@@ -57,6 +57,6 @@ evaluation = dict(
     save_best='mDice',            # 重点！以 Dice 分数最高为准保存 best_mDice.pth
     rule='greater'                # 分数越大越好
 )
-runner = dict(_delete_=True, type='IterBasedRunner', max_iters=30000)
+runner = dict(_delete_=True, type='IterBasedRunner', max_iters=36000)
 checkpoint_config = dict(_delete_=True, by_epoch=False, interval=2000)
 

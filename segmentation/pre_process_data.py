@@ -5,8 +5,11 @@ from glob import glob
 
 # 填入你所有的 masks 路径（包括训练集和那5个测试集）
 paths = [
-    'data/polypdataset/train/masks',
-    'data/polypdataset/val/masks',
+    'data/polypdataset/test/CVC-300/masks',
+    'data/polypdataset/test/CVC-ClinicDB/masks',
+    'data/polypdataset/test/CVC-ColonDB/masks',
+    'data/polypdataset/test/ETIS-LaribPolypDB/masks',
+    'data/polypdataset/test/Kvasir/masks',
 ]
 
 for folder in paths:

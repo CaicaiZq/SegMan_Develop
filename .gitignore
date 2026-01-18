@@ -33,3 +33,4 @@ segmentation/pretrained/
 checkpoints/
 logs/
 outputs/
+segmentation/test_eval/
