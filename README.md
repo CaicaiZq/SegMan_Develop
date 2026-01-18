@@ -38,9 +38,9 @@ else:
 ```
 **Step 3:** Install dependencies using the following commands.
 
-To install [Natten](https://github.com/SHI-Labs/NATTEN), you should modify the following with your PyTorch and CUDA versions accordingly.
+To install [Natten](https://github.com/SHI-Labs/NATTEN), you should modify the following with your PyTorch and CUDA versions accordingly.忽略证书验证安装。
 ```shell
-pip install natten==0.17.3+torch210cu121 -f https://shi-labs.com/natten/wheels/
+pip install natten==0.17.3+torch210cu121 -f https://shi-labs.com/natten/wheels/ --trusted-host shi-labs.com
 ```
 
 The [Selective Scan 2D](https://github.com/MzeroMiko/VMamba) can be install with:
